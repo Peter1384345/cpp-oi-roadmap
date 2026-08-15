@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C++ 竞赛全攻略 · CSP-J → CSP-S → NOIP 学习路线图与资源整合</title>
+<meta name="description" content="从 CSP-J 到 NOIP 的 C++ 信息学竞赛完整学习路线图：阶段规划、知识点体系、刷题指南、学习资源整合、竞赛日历。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="particle-canvas"></canvas>
+<canvas id="hex-stream" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.13"></canvas>
+<div class="scanline"></div>
+<div class="grid-overlay"></div>
+
+<header class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <span class="logo-bracket">&lt;/&gt;</span>
+      <span class="logo-text">CPP&nbsp;OI&nbsp;ROADMAP</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#roadmap">路线总览</a>
+      <a href="#stage0">语言基础</a>
+      <a href="#stage1">CSP-J</a>
+      <a href="#stage2">CSP-S</a>
+      <a href="#stage3">NOIP</a>
+      <a href="#resources">资源整合</a>
+      <a href="#codequest">实战课程</a>
+      <a href="#timeline">竞赛日历</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="hero"><div class="hero-content"><p class="hero-eyebrow">C++ OI · 不整虚的路线</p><div class="terminal-window"><div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-title">bash — oi-roadmap — 80x24</span></div><div class="term-body"><div><span class="t-prompt">$</span> <span class="t-cmd">cat roadmap.txt</span></div><div class="t-out"><span class="t-hl">信息学竞赛路线图</span>：CSP-J → CSP-S → NOIP</div><div class="t-out t-dim"># 四步走，别跳级；先打基础，再上难度</div><div><span class="t-prompt">$</span> <span class="t-cmd">./start --from zero --target noip</span></div><div class="t-out"><span class="t-pink">[OK]</span> 已加载 4 个阶段 · 36 个专题 · 24 个资源</div><div class="t-out t-dim"># 路线图 / 实战课程 / 竞赛日历 均已就绪</div><div><span class="t-prompt">$</span> <span class="t-cursor"></span></div></div></div><div class="hero-cta"><a href="#roadmap" class="btn btn-primary">看路线图 <span>→</span></a><a href="#codequest" class="btn btn-ghost">实战课程</a></div><div class="hero-stats"><div class="stat"><b data-count="4">0</b><span>大阶段</span></div><div class="stat"><b data-count="36">0</b><span>核心专题</span></div><div class="stat"><b data-count="24">0</b><span>精选资源</span></div><div class="stat"><b data-count="3">0</b><span>年路线</span></div></div></div><div class="hero-scroll" id="scrollHint">SCROLL ▼</div></section>
+
+<section class="section" id="roadmap">
+  <div class="section-head">
+    <span class="section-tag">ROADMAP</span>
+    <h2 class="section-title">四步走，别跳级</h2>
+    <p class="section-desc">路线图就一句话：先把基础写稳，再上难度。每一步都有明确的「学什么 → 练什么 → 怎么检验」，别一上来就啃省选题，那样只会怀疑人生。</p>
+  </div>
+  <div class="roadmap">
+    <div class="roadmap-line"></div>
+    <article class="road-node" data-stage="0">
+      <div class="node-badge">S0</div>
+      <div class="node-card">
+        <div class="node-top"><h3>语言基础 · 零基础入门</h3><span class="difficulty d0">入门</span></div>
+        <p class="node-desc">从 Hello World 到 STL 容器，建立 C++ 语法与编程思维基础，为竞赛打下地基。</p>
+        <ul class="node-points">
+          <li>环境搭建 / 输入输出 / 语法核心</li>
+          <li>数组 · 字符串 · 函数 · 结构体</li>
+          <li>STL 入门：vector / stack / queue</li>
+        </ul>
+        <div class="node-meta"><span>建议时长：1~2 个月</span><a href="#stage0">进入阶段 →</a></div>
+      </div>
+    </article>
+    <article class="road-node" data-stage="1">
+      <div class="node-badge">S1</div>
+      <div class="node-card">
+        <div class="node-top"><h3>CSP-J · 入门级</h3><span class="difficulty d1">普及</span></div>
+        <p class="node-desc">信息学竞赛第一座正式考场：初赛（笔试）+ 复赛（上机 4 题），掌握枚举、模拟、搜索与基础 DP。</p>
+        <ul class="node-points">
+          <li>枚举 · 模拟 · 贪心 · 二分</li>
+          <li>DFS / BFS 搜索入门</li>
+          <li>背包 DP · 线性 DP · 简单图论</li>
+        </ul>
+        <div class="node-meta"><span>建议时长：3~6 个月</span><a href="#stage1">进入阶段 →</a></div>
+      </div>
+    </article>
+    <article class="road-node" data-stage="2">
+      <div class="node-badge">S2</div>
+      <div class="node-card">
+        <div class="node-top"><h3>CSP-S · 提高级</h3><span class="difficulty d2">提高</span></div>
+        <p class="node-desc">晋级更高难度的战场：进阶数据结构与图论、状态压缩 DP、字符串算法与数论正式登场。</p>
+        <ul class="node-points">
+          <li>线段树 · 树状数组 · 并查集</li>
+          <li>最短路 · 最小生成树 · 强连通分量</li>
+          <li>状压 DP · KMP · 数论进阶</li>
+        </ul>
+        <div class="node-meta"><span>建议时长：6~12 个月</span><a href="#stage2">进入阶段 →</a></div>
+      </div>
+    </article>
+    <article class="road-node" data-stage="3">
+      <div class="node-badge">S3</div>
+      <div class="node-card">
+        <div class="node-top"><h3>NOIP · 省赛（最难关卡）</h3><span class="difficulty d3">省选级</span></div>
+        <p class="node-desc">全国青少年信息学奥林匹克联赛（省赛），综合运用全部高阶知识：网络流、树链剖分、多项式与思维构造题。</p>
+        <ul class="node-points">
+          <li>网络流 · 树链剖分 · 可持久化</li>
+          <li>斜率优化 · FFT/NTT 多项式</li>
+          <li>思维构造 · 博弈 · 概率期望</li>
+        </ul>
+        <div class="node-meta"><span>建议时长：1 年+</span><a href="#stage3">进入阶段 →</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section stage-section" id="stage-details">
+  <div class="section-head">
+    <span class="section-tag">STAGES</span>
+    <h2 class="section-title">每个阶段，具体怎么学</h2>
+    <p class="section-desc">点上面的标签切换阶段。每块都写清楚了：要学哪些知识点、哪些是保底必会、哪些是进阶加分、配套什么书和题。</p>
+  </div>
+  <div class="stage-tabs" id="stageTabs">
+    <button class="stage-tab active" data-tab="stage0">S0 语言基础</button>
+    <button class="stage-tab" data-tab="stage1">S1 CSP-J</button>
+    <button class="stage-tab" data-tab="stage2">S2 CSP-S</button>
+    <button class="stage-tab" data-tab="stage3">S3 NOIP</button>
+  </div>
+  <div class="stage-panels" id="stagePanels"></div>
+</section>
+
+<section class="section" id="resources">
+  <div class="section-head">
+    <span class="section-tag">RESOURCES</span>
+    <h2 class="section-title">资源都给你归好类了</h2>
+    <p class="section-desc">题库、书、知识库、视频、工具，都是圈子里的口碑货。按分类点一下就能筛，别在收藏夹里吃灰。</p>
+  </div>
+  <div class="resource-filters" id="resFilters">
+    <button class="res-filter active" data-filter="all">全部</button>
+    <button class="res-filter" data-filter="oj">在线题库</button>
+    <button class="res-filter" data-filter="book">经典书籍</button>
+    <button class="res-filter" data-filter="wiki">知识库</button>
+    <button class="res-filter" data-filter="video">视频课程</button>
+    <button class="res-filter" data-filter="tool">效率工具</button>
+  </div>
+  <div class="resource-grid" id="resourceGrid"></div>
+</section>
+
+
+<!-- ============ CodeQuest 实战课程（整合 codequest-cpp 线上站点） ============ -->
+<section class="section" id="codequest">
+  <div class="section-head">
+    <span class="section-tag">CODQUEST · 28 天 CSP-J</span>
+    <h2 class="section-title">CodeQuest 实战课程平台</h2>
+    <p class="section-desc">路线图讲「学什么」，这里解决「怎么练」——28 天从零到 CSP-J 的实战课程，已整合 CodeQuest 学习平台，点击卡片直接进入对应模块。</p>
+  </div>
+  <div class="cq-grid">
+    <a class="cq-card" href="codequest/cpp-olympiad-site/index.html" target="_blank" rel="noopener"><div class="cq-icon">🏠</div><h4>CodeQuest 首页</h4><p>平台总览：四大学习模块 + AI 智能学习系统介绍</p><span class="cq-go">进入 →</span></a>
+    <a class="cq-card" href="codequest/cpp-olympiad-site/path.html" target="_blank" rel="noopener"><div class="cq-icon">🗺️</div><h4>28 天学习路径</h4><p>按周拆解的 CSP-J 学习路线，每天一个明确目标</p><span class="cq-go">进入 →</span></a>
+    <a class="cq-card" href="codequest/cpp-olympiad-site/practice.html" target="_blank" rel="noopener"><div class="cq-icon">✏️</div><h4>练习中心</h4><p>互动练习与挑战闯关，巩固每天所学</p><span class="cq-go">进入 →</span></a>
+    <a class="cq-card" href="codequest/cpp-olympiad-site/dashboard.html" target="_blank" rel="noopener"><div class="cq-icon">📊</div><h4>学习仪表盘</h4><p>学习进度、错题分析、知识图谱可视化</p><span class="cq-go">进入 →</span></a>
+    <a class="cq-card" href="codequest/cpp-olympiad-site/course.html" target="_blank" rel="noopener"><div class="cq-icon">📚</div><h4>课程详情</h4><p>语法基础 / 流程控制 / 函数算法 / 数据结构</p><span class="cq-go">进入 →</span></a>
+    <a class="cq-card" href="codequest/cpp-olympiad-roadmap/cpp-olympiad-roadmap.html" target="_blank" rel="noopener"><div class="cq-icon">🧭</div><h4>可视化竞赛路线图</h4><p>ECharts + Mermaid 交互式学习路线全图</p><span class="cq-go">进入 →</span></a>
+  </div>
+</section>
+<section class="section" id="timeline">
+  <div class="section-head">
+    <span class="section-tag">CALENDAR</span>
+    <h2 class="section-title">一年到头，什么时候考什么</h2>
+    <p class="section-desc">从报名、笔试、复赛到省选，按时间线排好了。提前知道节点，别等到报名截止才想起没准备。</p>
+  </div>
+  <div class="calendar" id="calendar"></div>
+</section>
+
+<section class="section" id="faq">
+  <div class="section-head">
+    <span class="section-tag">FAQ</span>
+    <h2 class="section-title">新人最常问的 10 个问题</h2>
+  </div>
+  <div class="faq-list" id="faqList"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-logo">&lt;/&gt; C++ OI Roadmap</p>
+    <p>CSP-J → CSP-S → NOIP 信息学竞赛全阶段学习路线图与资源整合</p>
+    <p class="footer-note">纯学习资料整理 · 具体赛程以 NOI 官网与各省通知为准 · 已整合 CodeQuest 实战课程平台（peter1384345.github.io/codequest-cpp）</p>
+  </div>
+</footer>
+
+<a href="#hero" class="back-top" id="backTop" aria-label="回到顶部">↑</a>
+
+<script src="data/stages.js"></script>
+<script src="data/resources.js"></script>
+<script src="data/calendar.js"></script>
+<script src="data/faq.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/hexstream.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
